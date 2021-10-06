@@ -1,0 +1,17 @@
+[package]
+name = "something"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+# webserver
+axum = { version = "0.2", default-features = false, features = ["headers"] }
+hyper = { version = "0.14", features = ["server", "http1"] }
+tower-http = { version = "0.1", features = ["trace"] }
+
+# async runtime
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time"] }
+futures-util = { version = "0.3", default-features = false }
+
+# misc
+anyhow = { version = "1", features = ["backtrace"] }
